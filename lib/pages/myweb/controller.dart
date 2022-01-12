@@ -2,9 +2,12 @@ import 'package:get/get.dart';
 import 'package:plugin_app/common/app/app.dart';
 import 'package:plugin_app/common/config/config.dart';
 import 'package:plugin_app/common/utils/utils.dart';
+import 'package:plugin_app/pages/myweb/myweb.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class MyWebController extends GetxController{
+
+  final state = MyWebState();
 
   String? url;
 

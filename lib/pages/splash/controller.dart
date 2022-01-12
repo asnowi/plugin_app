@@ -2,8 +2,11 @@ import 'package:get/get.dart';
 import 'package:plugin_app/common/app/app.dart';
 import 'package:plugin_app/common/router/router.dart';
 import 'package:plugin_app/common/utils/utils.dart';
+import 'package:plugin_app/pages/splash/splash.dart';
 
 class SplashController extends GetxController {
+
+  final state = SplashState();
 
   @override
   void onInit() {
