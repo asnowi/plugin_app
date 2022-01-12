@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:plugin_app/common/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,9 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'common/app/app.dart';
 import 'common/res/res.dart';
 import 'common/router/router.dart';
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 
 Future<void> main() async {
   await initServices();
@@ -38,6 +42,7 @@ class MyApp extends StatelessWidget {
           child: GetMaterialApp(
             // app name
             title: AppStrings.APP_NAME,
+            navigatorKey: navigatorKey,
             // debug banner
             debugShowCheckedModeBanner: false,
             // 日志
@@ -47,7 +52,8 @@ class MyApp extends StatelessWidget {
             getPages: AppPages.routes,
             // 启动页面
             initialRoute: AppPages.INITIAL,
-          )
+            builder: EasyLoading.init(),
+          ),
       ),
     );
   }

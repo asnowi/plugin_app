@@ -55,6 +55,18 @@ dependencies:
   package_info: ^2.0.2
   # 权限申请
   permission_handler: ^8.3.0
+  # 事件通信
+  event_bus: ^2.0.0
+  # 网路图片缓存
+  cached_network_image: ^3.2.0
+  # web view
+  webview_flutter: ^3.0.0
+  # json 动画
+  lottie: ^1.2.1
+  # loading
+  flutter_easyloading: ^3.0.3
+
+
 
 
 dev_dependencies:

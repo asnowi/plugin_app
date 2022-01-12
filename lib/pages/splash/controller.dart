@@ -18,7 +18,8 @@ class SplashController extends GetxController {
     if(Global.hasFirst){
       Get.offAndToNamed(AppRoutes.HOME);
     }else{
-      Get.offAndToNamed(AppRoutes.WELCOME);
+      // Get.offAndToNamed(AppRoutes.WELCOME);
+      Get.offAndToNamed(AppRoutes.LOGIN);
     }
     super.onReady();
   }

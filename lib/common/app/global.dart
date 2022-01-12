@@ -4,6 +4,8 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:lottie/lottie.dart';
 import 'package:package_info/package_info.dart';
 import 'package:plugin_app/common/config/config.dart';
 import 'package:plugin_app/common/db/db.dart';
@@ -55,7 +57,7 @@ class Global {
 
     //  android 状态栏为透明的沉浸
     if (isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
+      SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: Brightness.dark,
           statusBarBrightness: Brightness.dark,
@@ -74,5 +76,29 @@ class Global {
     await DBUtil.install();
     dbUtil = await DBUtil.getInstance();
     userInfo = dbUtil?.getUser();
+
+    EasyLoading.instance
+      ..loadingStyle = EasyLoadingStyle.custom
+      ..maskColor = Colors.black
+      ..backgroundColor = Colors.black
+      ..indicatorColor = Colors.white
+      ..animationStyle = EasyLoadingAnimationStyle.opacity
+      ..textColor = Colors.white
+      ..indicatorType = EasyLoadingIndicatorType.circle
+      ..indicatorSize = 32.0
+      ..radius = 8.0
+      ..fontSize = 12.0
+      ..maskType = EasyLoadingMaskType.black
+      ..contentPadding = const EdgeInsets.symmetric(
+        vertical: 8.0,
+        horizontal: 16.0,
+      )
+      ..indicatorWidget = Container(
+        color: Colors.black,
+        width: 42.0,
+        height: 42.0,
+        child: Lottie.asset(AssetsProvider.lottiePath('loading')),
+      )
+      ..dismissOnTap = false;
   }
 }

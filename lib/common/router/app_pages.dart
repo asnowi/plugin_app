@@ -1,5 +1,6 @@
 import 'package:plugin_app/pages/home/home.dart';
 import 'package:plugin_app/pages/login/login.dart';
+import 'package:plugin_app/pages/myweb/myweb.dart';
 import 'package:plugin_app/pages/splash/splash.dart';
 import 'package:plugin_app/pages/welcome/welcome.dart';
 import 'package:get/get.dart';
@@ -45,6 +46,15 @@ class AppPages {
       name: AppRoutes.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+      transition: Transition.fadeIn,
+      // transitionDuration: _transitionDuration,
+    ),
+
+    /// my web 页
+    GetPage(
+      name: AppRoutes.MYWEB,
+      page: () => MyWebView(),
+      binding: MyWebBinding(),
       transition: Transition.fadeIn,
       // transitionDuration: _transitionDuration,
     ),

@@ -4,6 +4,8 @@ class SaveInfoKey {
 
 class BundleKey {
 
+    static const String URL = 'url';
+
 }
 
 class EventCode {
