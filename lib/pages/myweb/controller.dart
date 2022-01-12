@@ -9,7 +9,6 @@ class MyWebController extends GetxController{
 
   final state = MyWebState();
 
-  String? url;
 
   @override
   void onInit() {
@@ -22,15 +21,15 @@ class MyWebController extends GetxController{
   @override
   void onReady() {
     final map = Get.arguments;
-    url = map[BundleKey.URL];
+    state.url = map[BundleKey.URL];
     if(urlIsNotEmpty()) {
-      LogUtils.GGQ('----web url---->${url}');
+      LogUtils.GGQ('----web url---->${state.url}');
       update(['url']);
     }
     super.onReady();
   }
 
   bool urlIsNotEmpty() {
-    return (url?.isNotEmpty?? false);
+    return (state.url?.isNotEmpty?? false);
   }
 }

@@ -1,4 +1,6 @@
 class MyWebState {
 
 
+  String? url;
+
 }

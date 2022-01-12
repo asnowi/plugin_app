@@ -26,7 +26,7 @@ class MyWebView extends GetView<MyWebController> {
         id: 'url',
         builder: (_) => (controller.urlIsNotEmpty())
             ? WebView(
-                initialUrl: controller.url,
+                initialUrl: controller.state.url,
                 //是否允许js执行
                 javascriptMode: JavascriptMode.unrestricted,
                 onWebViewCreated: (WebViewController webViewController) {
